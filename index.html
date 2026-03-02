@@ -1,81 +1,132 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thurunu Gunarathna | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- AOS Library for scroll animations -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <style>
+    /* Smooth hover tilt effect for project cards */
+    .tilt-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .tilt-card:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+  </style>
 </head>
-<body>
+<body class="bg-gray-900 text-gray-200 scroll-smooth">
 
-<div class="container">
-
-  <header>
-    <h1>Thurunu Gunarathna</h1>
-    <p class="title">IT Undergraduate | Flutter Developer | ML Enthusiast</p>
+  <!-- NAVBAR -->
+  <header class="fixed w-full bg-gray-800 shadow z-50">
+    <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
+      <a href="#" class="text-xl font-bold text-blue-400">Thurunu Gunarathna</a>
+      <nav class="space-x-6">
+        <a href="#about" class="hover:text-blue-400 transition">About</a>
+        <a href="#skills" class="hover:text-blue-400 transition">Skills</a>
+        <a href="#projects" class="hover:text-blue-400 transition">Projects</a>
+        <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <section>
-    <h2>About Me</h2>
-    <p>
-      I am an IT undergraduate passionate about Artificial Intelligence,
-      Machine Learning, and Mobile Application Development.
-      I specialize in building intelligent mobile applications
-      using Flutter and FastAPI backend systems.
+  <!-- HERO SECTION -->
+  <section id="hero" class="min-h-screen flex flex-col justify-center items-center text-center px-4 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 pt-24">
+    <h1 class="text-5xl font-bold mb-4 text-blue-400" data-aos="fade-down" data-aos-duration="1000">Thurunu Gunarathna</h1>
+    <p class="text-xl mb-6 text-gray-300" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">IT Intern | AI/ML Enthusiast | Flutter & FastAPI Developer</p>
+    <a href="#projects" class="bg-blue-400 text-gray-900 px-6 py-3 rounded hover:bg-blue-500 transition transform hover:scale-105" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500">View My Work</a>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="max-w-6xl mx-auto py-20 px-4">
+    <h2 class="text-4xl font-bold mb-6 text-center text-blue-400" data-aos="fade-right">About Me</h2>
+    <p class="text-lg max-w-3xl mx-auto text-center leading-relaxed text-gray-300" data-aos="fade-left" data-aos-delay="300">
+      I am a passionate IT intern and AI/ML enthusiast focused on building intelligent applications using Flutter, FastAPI, and Python. I enjoy developing personalized solutions that make everyday life smarter and easier. My projects combine frontend, backend, and machine learning models to deliver real-world results.
     </p>
   </section>
 
-  <section>
-    <h2>Technical Skills</h2>
-    <div class="skills">
-      <ul>
-        <li>Python</li>
-        <li>Dart</li>
-        <li>Flutter</li>
-        <li>FastAPI</li>
-        <li>Machine Learning</li>
-        <li>REST APIs</li>
-        <li>Git & GitHub</li>
-      </ul>
+  <!-- SKILLS SECTION -->
+  <section id="skills" class="bg-gray-800 py-20 px-4">
+    <h2 class="text-4xl font-bold mb-6 text-center text-blue-400" data-aos="fade-down">Skills</h2>
+    <div class="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+      <div class="bg-gray-700 p-4 rounded shadow text-center font-medium hover:bg-blue-400 hover:text-gray-900 transition transform hover:scale-105" data-aos="zoom-in" data-aos-delay="100">Python</div>
+      <div class="bg-gray-700 p-4 rounded shadow text-center font-medium hover:bg-blue-400 hover:text-gray-900 transition transform hover:scale-105" data-aos="zoom-in" data-aos-delay="200">Flutter</div>
+      <div class="bg-gray-700 p-4 rounded shadow text-center font-medium hover:bg-blue-400 hover:text-gray-900 transition transform hover:scale-105" data-aos="zoom-in" data-aos-delay="300">FastAPI</div>
+      <div class="bg-gray-700 p-4 rounded shadow text-center font-medium hover:bg-blue-400 hover:text-gray-900 transition transform hover:scale-105" data-aos="zoom-in" data-aos-delay="400">TensorFlow / ML</div>
+      <div class="bg-gray-700 p-4 rounded shadow text-center font-medium hover:bg-blue-400 hover:text-gray-900 transition transform hover:scale-105" data-aos="zoom-in" data-aos-delay="500">MySQL</div>
+      <div class="bg-gray-700 p-4 rounded shadow text-center font-medium hover:bg-blue-400 hover:text-gray-900 transition transform hover:scale-105" data-aos="zoom-in" data-aos-delay="600">Git & GitHub</div>
+      <div class="bg-gray-700 p-4 rounded shadow text-center font-medium hover:bg-blue-400 hover:text-gray-900 transition transform hover:scale-105" data-aos="zoom-in" data-aos-delay="700">REST API</div>
+      <div class="bg-gray-700 p-4 rounded shadow text-center font-medium hover:bg-blue-400 hover:text-gray-900 transition transform hover:scale-105" data-aos="zoom-in" data-aos-delay="800">Data Analysis</div>
     </div>
   </section>
 
-  <section>
-    <h2>Projects</h2>
+  <!-- PROJECTS SECTION -->
+  <section id="projects" class="max-w-6xl mx-auto py-20 px-4">
+    <h2 class="text-4xl font-bold mb-6 text-center text-blue-400" data-aos="fade-up">Projects</h2>
+    <div class="grid md:grid-cols-2 gap-8">
 
-    <div class="project">
-      <h3>AI-Based Personalized Diet App</h3>
-      <p>
-        A mobile application built with Flutter and FastAPI backend.
-        Integrates Machine Learning for personalized diet recommendations,
-        food image recognition, and calorie estimation.
-      </p>
-      <a href="https://github.com/ThurunuG/ai-personalized-diet-app" target="_blank">View on GitHub</a>
+      <!-- Project 1 -->
+      <div class="tilt-card bg-gray-800 rounded shadow p-6 hover:bg-gray-700" data-aos="fade-right" data-aos-duration="1000">
+        <h3 class="text-2xl font-semibold mb-2 text-blue-300">AI-Based Personalized Diet App</h3>
+        <p class="mb-3 text-gray-300">A mobile app built with Flutter and FastAPI that provides personalized diet recommendations using ML models for food recognition and calorie estimation.</p>
+        <p class="font-medium mb-2 text-gray-400">Technologies: Flutter, FastAPI, TensorFlow, MySQL</p>
+        <a href="#" class="text-blue-400 hover:underline">GitHub Repo</a>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="tilt-card bg-gray-800 rounded shadow p-6 hover:bg-gray-700" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+        <h3 class="text-2xl font-semibold mb-2 text-blue-300">ML Food Classification System</h3>
+        <p class="mb-3 text-gray-300">Developed a deep learning model to classify images of food into multiple categories, supporting adaptive meal planning and personalized recommendations.</p>
+        <p class="font-medium mb-2 text-gray-400">Technologies: Python, TensorFlow, OpenCV</p>
+        <a href="#" class="text-blue-400 hover:underline">GitHub Repo</a>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="tilt-card bg-gray-800 rounded shadow p-6 hover:bg-gray-700" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400">
+        <h3 class="text-2xl font-semibold mb-2 text-blue-300">Stationery Shop Website & Mobile App</h3>
+        <p class="mb-3 text-gray-300">Built a full-stack e-commerce platform for a stationery shop with web and mobile apps, including inventory management and order tracking.</p>
+        <p class="font-medium mb-2 text-gray-400">Technologies: PHP, Laravel, MySQL, Livewire, Flutter</p>
+        <a href="#" class="text-blue-400 hover:underline">GitHub Repo</a>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="tilt-card bg-gray-800 rounded shadow p-6 hover:bg-gray-700" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="600">
+        <h3 class="text-2xl font-semibold mb-2 text-blue-300">REST API Backend Projects</h3>
+        <p class="mb-3 text-gray-300">Implemented multiple backend APIs with FastAPI for mobile and web applications with database integrations and secure endpoints.</p>
+        <p class="font-medium mb-2 text-gray-400">Technologies: Python, FastAPI, MySQL</p>
+        <a href="#" class="text-blue-400 hover:underline">GitHub Repo</a>
+      </div>
+
     </div>
-
-    <div class="project">
-      <h3>FastAPI REST API</h3>
-      <p>
-        Backend REST API developed using FastAPI with CRUD operations
-        and structured endpoint architecture.
-      </p>
-    </div>
-
-    <div class="project">
-      <h3>ML Food Classification Model</h3>
-      <p>
-        Image classification model trained for food recognition
-        using supervised machine learning techniques.
-      </p>
-    </div>
-
   </section>
 
-  <section>
-    <h2>Contact</h2>
-    <p>Email: your@email.com</p>
-    <p>GitHub: github.com/ThurunuG</p>
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="bg-gray-800 py-20 px-4">
+    <h2 class="text-4xl font-bold mb-6 text-center text-blue-400" data-aos="fade-down">Contact Me</h2>
+    <p class="text-center mb-8 text-gray-300" data-aos="fade-up" data-aos-delay="200">Feel free to reach out for collaborations, internships, or questions.</p>
+    <div class="max-w-2xl mx-auto text-center space-y-4" data-aos="zoom-in" data-aos-delay="400">
+      <p>Email: <a href="mailto:yourmail@gmail.com" class="text-blue-400 hover:underline">yourmail@gmail.com</a></p>
+      <p>GitHub: <a href="https://github.com/thurunugunarathna" class="text-blue-400 hover:underline">thurunugunarathna</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/thurunugunarathna" class="text-blue-400 hover:underline">thurunugunarathna</a></p>
+      <a href="resume.pdf" download class="inline-block bg-blue-400 text-gray-900 px-6 py-3 rounded hover:bg-blue-500 transition transform hover:scale-105 mt-4">Download CV</a>
+    </div>
   </section>
 
-</div>
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 py-6 text-center text-gray-500">
+    &copy; 2026 Thurunu Gunarathna. All rights reserved.
+  </footer>
+
+  <script>
+    AOS.init({
+      once: true, // Animations happen only once
+      duration: 1000, // global duration
+    });
+  </script>
 
 </body>
 </html>
